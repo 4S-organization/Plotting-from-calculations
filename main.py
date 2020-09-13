@@ -47,16 +47,10 @@ def createShedule(sp,tp,dv,hg,scd):
 
 	pyplot.show()
 
-rdr("test.csv","sp",sp)
-rdr("test.csv","tp",tp)
-rdr("test.csv","dv",dv)
-rdr("test.csv","hg",hg)
+rdr("tests/test1.csv","sp",sp)
+rdr("tests/test1.csv","tp",tp)
+rdr("tests/test1.csv","dv",dv)
+rdr("tests/test1.csv","hg",hg)
 for i in range(len(sp)):
 	sec.append(i+1)
 createShedule(sp,tp,dv,hg,sec)
-
-
-
-
-
-
