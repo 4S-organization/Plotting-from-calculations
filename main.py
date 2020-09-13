@@ -7,6 +7,17 @@ pressure = []
 height = []
 second = []
 
+
+
+def startRendering():	# Start programm
+	readCSVFile("tests/test1.csv","speed", speed)
+	readCSVFile("tests/test1.csv","temperature", temperature)
+	readCSVFile("tests/test1.csv","pressure", pressure)
+	readCSVFile("tests/test1.csv","height", height)
+	readCSVFile('tests/test1.csv', "second" , second)
+	createShedule(speed,temperature,pressure,height,second)
+
+
 def readCSVFile(filename,row1,lst):
 	with open(filename,newline='') as csvfile:
 		reader = csv.DictReader(csvfile,delimiter=";")
@@ -49,9 +60,7 @@ def createShedule(sp,tp,dv,hg,scd):
 
 	pyplot.show()
 
-readCSVFile("tests/test1.csv","speed", speed)
-readCSVFile("tests/test1.csv","temperature", temperature)
-readCSVFile("tests/test1.csv","pressure", pressure)
-readCSVFile("tests/test1.csv","height", height)
-readCSVFile('tests/test1.csv', "second" , second)
-createShedule(speed,temperature,pressure,height,second)
+
+
+if __name__ == '__main__':
+	startRendering()
