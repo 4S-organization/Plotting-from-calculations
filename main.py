@@ -1,6 +1,7 @@
 import matplotlib.pyplot as pyplot
 import matplotlib.patches as mpatches
 import csv
+import os
 
 speed = []
 temperature = []
@@ -72,8 +73,21 @@ def createShedule(sp,tp,dv,hg,scd):
 	legend = mpatches.Patch(color='green', label='Успешно')
 	pyplot.legend(loc='upper right', handles=[legend])
 
+	saveShedule(name='1')
+
 
 	pyplot.show()
+
+
+
+def saveShedule(name, fmt='png'):
+	pwd = os.getcwd()
+	iPath = 'outputs/'
+	if not os.path.exists(iPath):
+		os.mkdir(iPath)
+	os.chdir(iPath)
+	pyplot.savefig('{}.{}'. format(name, fmt))
+	os.chdir(pwd)	
 
 
 
