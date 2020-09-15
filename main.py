@@ -2,6 +2,7 @@ import matplotlib.pyplot as pyplot
 import matplotlib.patches as mpatches
 import csv
 import os
+import datetime
 
 speed = []
 temperature = []
@@ -73,10 +74,17 @@ def createShedule(sp,tp,dv,hg,scd):
 	legend = mpatches.Patch(color='green', label='Успешно')
 	pyplot.legend(loc='upper right', handles=[legend])
 
-	saveShedule(name='1')
+	saveShedule(name=generateOutputName())
 
 
 	pyplot.show()
+
+
+
+
+def generateOutputName():
+	time = datetime.datetime.now()
+	return time
 
 
 
