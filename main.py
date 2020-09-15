@@ -1,4 +1,5 @@
 import matplotlib.pyplot as pyplot
+import matplotlib.patches as mpatches
 import csv
 
 speed = []
@@ -38,11 +39,18 @@ def createShedule(sp,tp,dv,hg,scd):
 	pyplot.xlabel('секунды', fontsize=12)
 	pyplot.ylabel('скорость м/с', fontsize=12)
 
+	legend = mpatches.Patch(color='green', label='Успешно')
+	pyplot.legend(loc='upper right', handles=[legend])
+
+
 	pyplot.subplot(2, 2, 2)
 	pyplot.plot(scd, tp, 'r')
 	pyplot.title('Температура', fontsize=20)
 	pyplot.xlabel('секунды', fontsize=12)
 	pyplot.ylabel('температура', fontsize=12)
+
+	legend = mpatches.Patch(color='green', label='Успешно')
+	pyplot.legend(loc='upper right', handles=[legend])
 
 
 	pyplot.subplot(2, 2, 3)
@@ -51,11 +59,18 @@ def createShedule(sp,tp,dv,hg,scd):
 	pyplot.xlabel('секунды', fontsize=12)
 	pyplot.ylabel('давление', fontsize=12)
 
+	legend = mpatches.Patch(color='green', label='Успешно')
+	pyplot.legend(loc='upper right', handles=[legend])
+
+
 	pyplot.subplot(2, 2, 4)
 	pyplot.plot(scd, hg, 'g')
 	pyplot.title('Высота', fontsize=20)
 	pyplot.xlabel('секунды', fontsize=12)
 	pyplot.ylabel('высота', fontsize=12)
+
+	legend = mpatches.Patch(color='green', label='Успешно')
+	pyplot.legend(loc='upper right', handles=[legend])
 
 
 	pyplot.show()
